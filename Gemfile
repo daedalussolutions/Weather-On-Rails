@@ -74,6 +74,6 @@ end
 gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 gem 'jquery-rails'
 gem 'dartsass-sprockets'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 
 gem 'geocoder'
