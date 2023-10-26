@@ -1,12 +1,6 @@
-require 'net/http'
-
 class HomeController < ApplicationController
   def index
-
-    url = "https://api.pirateweather.net/forecast/QEoBkhPosSoMi6JID19SgnjFpVrvZnDS/43.6532%2C79.3832"
-    uri = URI(url)
-    res = Net::HTTP.get_response(uri)
-    @data = JSON.parse(res.body)
+    @data = CurrentWeatherService.new(latitude: "43.6532", longitude:"79.3832", units:"metric").call
   end
 end
 
