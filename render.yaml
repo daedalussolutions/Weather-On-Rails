@@ -1,6 +1,3 @@
-databases: 
-  - name: postgres
-  
 services: 
   - type: web
     name: rails
