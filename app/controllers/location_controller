@@ -1,0 +1,8 @@
+class HomeController < ApplicationController
+  def location
+    latitude = params[latitude]
+    longitude = params[longitude]
+
+    @data = CurrentWeatherService.new(latitude: latitude, longitude: longitude, units: "metric").call
+  end
+end
