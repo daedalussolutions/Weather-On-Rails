@@ -17,6 +17,19 @@ class HomeController < ApplicationController
       @data = CurrentWeatherService.new(latitude: latitude, longitude: longitude, units: "metric").call
     end
   end
+  def search
+    location = params[:search]
+
+    if location.present?
+      result = Geocoder.search(params[:search]).first.coordinates
+      if result
+        redirect_to location_path(place: "#{result.first},#{result.second}")
+      else
+        flash[:error] = "Location not found"
+        redirect_to root_path
+      end
+    end
+  end
   def index
       @response = Geocoder.search("43.6532,-79.3832").first
       @data = CurrentWeatherService.new(latitude: "43.6532", longitude: "-79.3832", units: "metric").call
