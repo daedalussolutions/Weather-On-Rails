@@ -2,10 +2,20 @@
 <div class="p-5 mb-7 window rounded-3">
         <div class="container-fluid py-5">
         <p><%= Date.today.strftime("%A, %B %d ") %></p>
-          <h1 class="display-5 fw-bold"><%= @data["weather"].first["main"]%></h1>
-          <img src="http://openweathermap.org/img/wn/<%= @data["weather"].first["icon"] %>@2x.png" />
+          <div class="d-flex justify-content-between">
+            <h1 class="display-5 fw-bold"><%= @data["weather"].first["main"]%></h1>
+            <h2><%= @response.city %>, <%= @response.province %></h2>
+          </div>
+          
+          <div class="d-flex justify-content-between">
+            <img src="http://openweathermap.org/img/wn/<%= @data["weather"].first["icon"] %>@2x.png" />
+            <h2><%= @response.country %></h2>
+          </div>
+          
           <p><%= @data["weather"].first["description"].titleize %></p>
           <h2><%= @data["main"]["temp"].round() %>°C</h2>
-          <h4><%= @country %></h4>
+          <p>Feels Like <%= @data["main"]["feels_like"].round() %>°C</p>
+          <h4>Latitude: <%= @data["coord"]["lat"] %></h4>
+          <h4>Latitude: <%= @data["coord"]["lon"] %></h4>
       </div>
   </div>
