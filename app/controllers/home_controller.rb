@@ -7,12 +7,6 @@ class HomeController < ApplicationController
       latitude, longitude = params[:place].split(',')
       
       @response = Geocoder.search(params[:place].split(',')).first
-      puts @response.city if @response.present?
-      puts @response.province if @response.present?
-      puts @response.country if @response.present?
-
-      puts "Latitude: #{latitude}"
-      puts "Longitude: #{longitude}"
       
       @data = CurrentWeatherService.new(latitude: latitude, longitude: longitude, units: "metric").call
     end
