@@ -36,6 +36,4 @@
 
 /config/credentials/production.key
 
-/.env/
-.env
 .env
