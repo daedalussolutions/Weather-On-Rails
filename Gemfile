@@ -76,4 +76,4 @@ gem 'jquery-rails'
 gem 'dartsass-sprockets'
 gem 'dotenv-rails'
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.8.3'
