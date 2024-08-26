@@ -5,4 +5,4 @@ Ruby on Rails weather app using OpenWeatherMaps API
 
 * API_KEY needed in .env
 
-Deployed at https://weather-on-rails.onrender.com/
+Deployed at https://weatheronrails.online
